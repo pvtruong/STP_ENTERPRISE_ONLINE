@@ -1,0 +1,51 @@
+<div  id ='exportable'  class="table-responsive">
+<table class='table  table-striped  table-hover table-bordered'>
+	<tr>
+		<th>Mã vật tư</th>
+		<th>Tên vật tư</th>
+		<th>Tồn đầu</th>
+		<th>Dư đầu</th>
+		<th>SL nhập</th>
+		<th>Tiền nhập</th>
+		<th>SL xuất</th>
+		<th>Tiền xuất</th>
+		<th>Tồn cuối</th>
+		<th>Dư cuối</th>
+		
+	</tr>
+	<tr ng-repeat='r in data'  style='cursor:pointer'  ui-sref="home.report({reportId:'sochitietvattu',query:{cItem:r.ma_vt,cSite:condition.ma_kho,dFrom:condition.tu_ngay,dTo:condition.den_ngay,drilldown:true}})" ui-sref-opts="{inherit: false}"  ng-class="r.bold?'cbold':'cnormal'">
+		<td>
+			{{::r.ma_vt}}
+		</td>
+		<td>
+			{{::r.ten_vt}}
+		</td>
+		<td>
+			{{::r.ton_dau|number:2}}
+		</td>
+		<td>
+			{{::r.du_dau|number:0}}
+		</td>
+		
+		<td>
+			{{::r.sl_nhap|number:2}}
+		</td>
+		<td>
+			{{::r.tien_nhap|number:0}}
+		</td>
+		<td>
+			{{::r.sl_xuat|number:2}}
+		</td>
+		<td>
+			{{::r.tien_xuat|number:0}}
+		</td>
+		<td>
+			{{::r.ton_cuoi|number:2}}
+		</td>
+		<td>
+			{{::r.du_cuoi|number:0}}
+		</td>
+		
+	</tr>
+</table>
+</div>

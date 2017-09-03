@@ -1,0 +1,1 @@
+var configs = {server:"http://localhost:1985/",database:"STP_SE_2017_beta2"}

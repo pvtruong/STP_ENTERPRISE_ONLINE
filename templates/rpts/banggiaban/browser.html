@@ -1,0 +1,36 @@
+<div  id ='exportable'  class="table-responsive">
+    <table class='table  table-striped  table-hover table-bordered'>
+        <tr>
+            <th>Mã vật tư</th>
+            <th>Tên vật tư</th>
+            <th>Giá bán lẻ</th>
+            <th>Giá bán buôn 1</th>
+            <th>Giá bán buôn 2</th>
+            <th>Giá bán buôn 3</th>
+            <th>Giá bán buôn 4</th>
+        </tr>
+        <tr ng-repeat='r in data'  ng-class="r.bold?'cbold':'cnormal'">
+            <td>
+                {{::r.ma_vt}}
+            </td>
+            <td>
+                {{::r.ten_vt}}
+            </td>
+            <td>
+                {{::r.gia_ban_le|number:0}}
+            </td>
+            <td>
+                {{::r.gia_ban_buon|number:0}}
+            </td>
+            <td>
+                {{::r.gia_ban_buon1|number:0}}
+            </td>
+            <td>
+                {{::r.gia_ban_buon2|number:0}}
+            </td>
+            <td>
+                {{::r.gia_ban_buon3|number:0}}
+            </td>
+        </tr>
+    </table>
+</div>

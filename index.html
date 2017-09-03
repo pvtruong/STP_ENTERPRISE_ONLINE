@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>STP Enterprise</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Accounting, crm, pos, software" name="description"/>
+<meta content="Phạm Văn Trường" name="author"/>
+<meta content="#34AADC" name="theme-color"/>
+<link rel="manifest" href="/manifest.json">
+<!--service worker-->
+<script>
+	
+    var endpoint,key,authSecret;
+    if (!Notification){
+         console.log("Trinh duyet cua ban khong ho tro notification");
+     }else{
+
+         if(navigator.serviceWorker){
+             navigator.serviceWorker.register('sw.js').then(function(serviceWorkerRegister) {
+               return serviceWorkerRegister.pushManager.getSubscription().then(function(subscription) {
+                   if (subscription) {
+                      return subscription;
+                    }
+                   return serviceWorkerRegister.pushManager.subscribe({ userVisibleOnly: true });
+                });
+
+             }).then(function(subscription) {
+                endpoint = subscription.endpoint;
+				if(!endpoint){
+					//alert("Trình duyệt của bạn không hỗ trợ push notification. Hãy sử dụng trình duyệt Chrome bản mới nhất để chương trình chạy tốt nhất")
+                    console.log("Trình duyệt của bạn không hỗ trợ push notification. Hãy sử dụng trình duyệt Chrome bản mới nhất để chương trình chạy tốt nhất");
+                }
+
+     
+
+             });
+         } else {
+			console.log("Trình duyệt của bạn không hỗ trợ service worker. Hãy sử dụng chrome bản mới nhất để chương trình chạy tốt nhất")
+		 }
+         if (Notification.permission !== "granted"){
+             Notification.requestPermission();
+         }
+     }
+</script>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="images/favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<body ng-app="accApp" id="app" class="ng-cloak">
+    <!--<a ui-sref="login" ui-sref-active="active">login</a>
+    <a ui-sref="home" ui-sref-active="active">home</a>-->
+   <div class='ng-cloak'  ui-view style="max-width: 100%;overflow-x: hidden;">
+   </div>
+<!--end chat box-->
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+ 
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular-locale_vi-vn.js"></script>
+<script src="libs/angular-cookies/angular-cookies.min.js"></script>
+<script src="libs/angular-route/angular-route.min.js"></script>
+<script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<script src="libs/ui-bootstrap/ui-bootstrap-custom-tpls-2.5.0.min.js"></script>
+    
+<script src="libs/underscore/underscore.js"></script>
+<script src="libs/async/dist/async.min.js"></script>
+
+<script src='libs/moment/min/moment-with-locales.min.js'></script>
+    
+<script src="libs/webshim/js-webshim/minified/polyfiller.js"></script>
+    
+<script>
+    webshims.setOptions('forms-ext', { datepicker: { dateFormat: 'dd/mm/yy' } });
+    webshims.activeLang('en-AU');
+    webshims.polyfill('forms forms-ext');
+</script>  
+    
+<script src="configs.js"></script>
+<script src="menu.js"></script>
+<script src="API.js"></script>
+<script src="app.js"></script>
+
+</body>
+<!-- END BODY -->
+</html>

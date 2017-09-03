@@ -1,0 +1,38 @@
+<div id ='exportable' class="table-responsive">
+	<table class='table  table-striped  table-hover table-bordered'>
+		<tr>
+			<th>Số chứng từ</th>
+			<th>Ngày chứng từ</th>
+			<th>Diễn giải</th>
+			<th>SL nhập</th>
+			<th>Tiền nhập</th>
+			<th>SL xuất</th>
+			<th>Tiền xuất</th>
+			
+		</tr>
+		<tr ng-repeat='r in data' ng-class="r.bold?'cbold':'cnormal'">
+			<td>
+				{{::r.so_ct}}
+			</td>
+			<td>
+				{{::r.ngay_ct|date:'dd/MM/yyyy'}}
+			</td>
+			<td>
+				{{::r.dien_giai}}
+			</td>
+			
+			<td>
+				{{::r.sl_nhap|number:2}}
+			</td>
+			<td>
+				{{::r.tien_nhap|number:0}}
+			</td>
+			<td>
+				{{::r.sl_xuat|number:2}}
+			</td>
+			<td>
+				{{::r.tien_xuat|number:0}}
+			</td>
+		</tr>
+	</table>
+</div>

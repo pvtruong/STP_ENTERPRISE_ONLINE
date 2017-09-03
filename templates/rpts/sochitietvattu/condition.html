@@ -1,0 +1,43 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Điều kiện lọc</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="condition-report">
+        <form name='form' novalidate class='form-horizontal'>
+            <div class='form-group'>
+                <label>Từ ngày <span class="required">*</span></label>
+                <div>
+                    <input type="date" ng-model="$ctrl.condition.dFrom" class="form-control" ng-required="true"/>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label>Đến ngày <span class="required">*</span></label>
+                <div>
+                    <input type="date" ng-model="$ctrl.condition.dTo" class="form-control" ng-required="true"/>
+                </div>
+            </div>
+            
+			<div class='form-group'>
+				<label>Vật tư <span class="required">*</span></label>
+				<div>
+					<input type="text" ng-model="$ctrl.condition.cItem" class="form-control" ng-required="true"/>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label>Kho</label>
+				<div>
+					<input type="text" ng-model="$ctrl.condition.cSite" class="form-control"/>
+				</div>
+			</div>
+			
+        </form>
+
+
+    </div>
+</div>
+<div class="modal-footer">
+     <button  type='button' class="btn btn-primary" ng-click='$ctrl.ok()' ng-disabled='form.$invalid'>Xem</button>
+     <button  type='button' class="btn btn-primary" ng-click='$ctrl.cancel()'>Thoát</button>
+</div>
+
+

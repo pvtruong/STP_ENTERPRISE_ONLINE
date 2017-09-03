@@ -1,0 +1,91 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Điều kiện lọc</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="condition-report">
+        <form name='form' novalidate class='form-horizontal'>
+			<div class='form-group'>
+				<label>Top <span class="required">*</span></label>
+				<div>
+					<input type="number"  class="form-control" ng-model="$ctrl.condition.top" ng-required="true"/>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label>Báo cáo theo <span class="required">*</span></label>
+				<div>
+					<select class="form-control" ng-model="$ctrl.condition.bctheo">
+						<option value="ma_kh">Khách hàng</option>
+						<option value="ma_nv">Nhân viên</option>
+						<option value="ma_vt">Sản phẩm</option>
+						<option value="nh_kh1">Nhóm khách 1</option>
+						<option value="nh_kh2">Nhóm khách 2</option>
+						<option value="nh_kh3">Nhóm khách 3</option>
+						<option value="nh_vt1">Nhóm vật tư 1</option>
+						<option value="nh_vt2">Nhóm vật tư 2</option>
+						<option value="nh_vt3">Nhóm vật tư 3</option>
+						<option value="nha_cung_cap">Nhà cung cấp</option>
+					</select>
+				</div>
+			</div>
+			 <div class='form-group'>
+                <label>Từ ngày <span class="required">*</span></label>
+                <div>
+                    <input type="date" ng-model="$ctrl.condition.tu_ngay" class="form-control" ng-required="true"/>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label>Đến ngày <span class="required">*</span></label>
+                <div>
+                    <input type="date" ng-model="$ctrl.condition.den_ngay" class="form-control" ng-required="true"/>
+                </div>
+            </div>
+			
+			<!--<div class='form-group'>
+				<label>Mã khách hàng</label>
+				<div>
+					<ng-typeahead
+						module="dmkh" fields="ma_kh,ten_kh" field-model="ten_kh" field-label="ma_kh"
+						ng-model='condition.ten_kh' label="condition.ma_kh">
+					</ng-typeahead>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label>Mã vật tư</label>
+				<div>
+					<ng-typeahead
+						module="dmvt" fields="ma_vt,ten_vt" field-model="ten_vt" field-label="ma_vt"
+						ng-model='condition.ten_vt' label="condition.ma_vt">
+					</ng-typeahead>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label>Mã phí</label>
+				<div>
+					<ng-typeahead
+						module="dmphi" fields="ma_phi,ten_phi" field-model="ten_phi" field-label="ma_phi"
+						ng-model='condition.ten_phi' label="condition.ma_phi">
+					</ng-typeahead>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label>Mã vụ việc</label>
+				<div>
+					<ng-typeahead
+						module="dmdt" fields="ma_dt,ten_dt" field-model="ten_dt" field-label="ma_dt"
+						ng-model='condition.ten_dt' label="condition.ma_dt">
+					</ng-typeahead>
+				</div>
+			</div>
+			-->
+            
+        </form>
+
+
+    </div>
+</div>
+<div class="modal-footer">
+     <button type='button' class="btn btn-primary" ng-click='$ctrl.ok()' ng-disabled='form.$invalid'>Xem</button>
+     <button type='button' class="btn btn-primary" ng-click='$ctrl.cancel()'>Thoát</button>
+</div>
+
+
